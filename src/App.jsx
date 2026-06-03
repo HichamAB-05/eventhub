@@ -4,6 +4,11 @@ import Home from "./pages/Home";
 import EventDetails from "./pages/EventDetails";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import CreateEvent from "./pages/CreateEvent";
+import ManageEvents from "./pages/ManageEvents";
+import AttendeeList from "./pages/AttendeeList";
+
+
 
 function App() {
   return (
@@ -14,41 +19,37 @@ function App() {
         <div className="max-w-6xl mx-auto h-16 px-6 flex items-center justify-between">
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="text-2xl font-bold text-green-700"
-          >
+          <Link to="/" className="text-2xl font-bold text-green-700" >
             EventHub
           </Link>
 
           {/* Menu */}
           <nav className="flex items-center gap-4">
 
-            <Link
-              to="/"
-              className="hover:text-green-700 transition"
-            >
+            <Link to="/" className="hover:text-green-700 transition" >
               Home
             </Link>
 
-            <Link
-              to="/event"
-              className="hover:text-green-700 transition"
-            >
+            <Link to="/event" className="hover:text-green-700 transition" >
               Event
             </Link>
 
-            <Link
-              to="/login"
-              className="border px-4 py-2 rounded-xl hover:bg-gray-100 transition"
-            >
+            <Link to="/create-event" className="hover:text-green-700" >
+                     Create Event
+            </Link>
+
+            <Link to="/manage-events" className="hover:text-green-700" >
+                    Manage Events
+            </Link>
+            <Link to="/attendees" className="hover:text-green-700" >
+                   Attendees
+            </Link>
+
+            <Link to="/login" className="border px-4 py-2 rounded-xl hover:bg-gray-100 transition" >
               Login
             </Link>
 
-            <Link
-              to="/register"
-              className="bg-green-700 text-white px-4 py-2 rounded-xl hover:bg-green-800 transition"
-            >
+            <Link to="/register" className="bg-green-700 text-white px-4 py-2 rounded-xl hover:bg-green-800 transition" >
               Sign up
             </Link>
 
@@ -60,23 +61,14 @@ function App() {
       <Routes>
 
         <Route path="/" element={<Home />} />
-
-        <Route
-          path="/event"
-          element={<EventDetails />}
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/register"
-          element={<Register />}
-        />
-
+        <Route path="/event" element={<EventDetails />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/create-event" element={<CreateEvent />} />
+        <Route path="/manage-events" element={<ManageEvents />} />
+        <Route path="/attendees" element={<AttendeeList />} />
       </Routes>
+  
     </main>
   );
 }
